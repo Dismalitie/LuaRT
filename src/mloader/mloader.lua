@@ -1,0 +1,1 @@
+os.execute("start cmd.exe /k init")

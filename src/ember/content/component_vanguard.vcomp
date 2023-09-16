@@ -1,0 +1,34 @@
+%root = {vanguard}
+&imports = %global[%root]
+&wfs = [windowsFileSubsystem_ntfs]
+&assets = [args:assets]
+
+{vanguard}
+     {lib}
+          [io] :alias: "Standard input output library" :returns: [io]
+          [file] :alias: "File handle system" :returns: [win.&wfs&.file_handler] :as: [ntfs]
+          [math] :alias: "Standard arithmetic module" :returns: [math]
+          [str] :alias: "String manipulation library" :returns: [string_lib] :as: [%root]
+     {ref}
+          [vanguard] :returns: [%root] :as: [%root]
+          [api] :alias: "Application programming interface for Vanguard" :returns: [api_datStream]
+          [&assets_96313] :alias: "Syntax handler" :returns: {[error], [warn], [info]} :as: [syntax_handle]
+          [txt.enc_utf8] :alias: "Text encoder" :returns: [utf8] :with: [win.fmt.crlf]
+          [components] :returns: [%root%.components:import]
+          [icos] :returns: "%rootDir$\icos" :as: [dir]
+          [dir] :returns: [dir]
+     {validComponents}
+          [Vanguard] :or: [%root] :as: [%root] :tag: (cert:[00000000-0000-0000-0000-000000000000]
+          [ember] :or: [mbr] :as: [comp:mbr] :tag: (cert:[bdc08a8c-fc56-4f09-848a-688a8a248c5a])
+          [termite] :or: [env_terminal:pipe] :as: [comp:termite] :tag: (cert:[c7f31a27-bbfb-4c70-82b2-5c3add4c6215])
+          [dll] :or: [win_dll_handler] :as: [comp:dll] :tag: (cert:[7cd2e9f3-c55a-4cad-94c5-4fc56216e4c3])
+     {tokens}
+          [vanguard] (if * == [var] then( :returns: [syntax_handle].throwException("Cannot use variable Vanguard: Already in use by system root.")))
+     {shorthands}
+          [ve] :as: [virtual_environment_replicator]
+          [vm] :as: [virtual_machine_replicator]
+          [ec] :as: [enviro_console]
+          [env] :as: [enviro_args] :with: [win.events:applaunch($input = %args, %root)]
+
+ 
+$index :returns: [%root] :as: $fmt([utf8])

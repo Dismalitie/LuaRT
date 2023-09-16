@@ -1,0 +1,24 @@
+Hey, welcome to notely!
+
+notely, is a free, lightweight and easy to use tasks / to-do app. Please keep in mind that notely is in beta and you may experience some issues.
+
+« Getting started »
+
+To create our first note, go to the "Title" entry and replace it with the name of your note.
+Then, we can edit our note's content underneath in the text box marked "Description".
+After you have filled out your note, press "Add Note".
+To access your note, you can click on your note's name in the list on the right; it will display the contents in this text box.
+
+If you made a mistake or need to change / update your note, use this textbox to edit it.
+If you don't need the note anymore, press the delete button to the right.
+
+« Note status's »
+
+Next to each note in the list, there is an icon depicting the status of your note;
+- Green: Note is complete
+- Red: Note is incomplete
+You can toggle the status of a note by selecting it in the list, and using the checkbox below to toggle it's state.
+
+« Note context menu »
+
+Right-click on this textbox to bring up a menu. This menu can be useful in some cases; go ahead and experiment with them.
